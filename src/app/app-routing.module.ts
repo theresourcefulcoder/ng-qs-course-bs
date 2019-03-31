@@ -4,7 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 /**
  * Defined routes for the root AppRoutingModule
  */
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+];
 
 /**
  * Root routing module for the application
