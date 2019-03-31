@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { SharedModule } from './shared/shared/shared.module';
 
 /**
  * Root module for the application
@@ -20,7 +19,7 @@ import { FooterComponent } from './core/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
