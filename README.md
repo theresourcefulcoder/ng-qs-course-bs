@@ -1,4 +1,4 @@
-# NgQsCourseBs
+# Angular Quick Start Course using Bootstrap and Ng-Bootstrap
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0-beta.10.
 
