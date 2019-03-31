@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 /**
- * Root application component
+ * Core header component
  *
  * @example
- * <app-root></app-root>
+ * <app-header></app-header>
  */
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class AppComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   /**
    * Locally scoped variables
    */
+  navbarCollapsed = true;
 
   /**
    * Constructor

@@ -1,0 +1,17 @@
+header {
+    padding-bottom: .5rem; /* Provides some separation between the header and the main content */
+  }
+  
+  header > nav.navbar {
+    background: linear-gradient(315deg, #00b712 0%, #5aff15 74%); /* Provides the header gradient background color */
+  }
+  
+  header #navbarContent .nav-link {
+    text-align: center; /* Aligns the links to the center, especially when collapsed */
+  }
+  
+  header #navbarContent .nav-link:focus,
+  header #navbarContent .nav-link:hover {
+    background-color: rgba(0, 183, 18, 0.4); /* Provides contrast to indicate a link is focused or hovered */
+  }
+  

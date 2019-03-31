@@ -1,0 +1,34 @@
+<header class="row">
+  <nav class="navbar navbar-expand-md navbar-light col-12">
+    <a class="navbar-brand"
+       [routerLink]="['/home']"
+       aria-label="Acme Products"
+       (click)="navbarCollapsed=true">
+      ACME
+    </a>
+    <button class="navbar-toggler navbar-toggler-right"
+            type="button"
+            (click)="navbarCollapsed=!navbarCollapsed"
+            [attr.aria-expanded]="!navbarCollapsed"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbarContent"
+         class="collapse navbar-collapse align-self-stretch"
+         [ngbCollapse]="navbarCollapsed">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item d-lg-flex"
+            [routerLinkActive]="['active']">
+          <a class="nav-link d-lg-flex flex-lg-column-reverse"
+             [routerLink]="['/home']"
+             (click)="navbarCollapsed=true">
+            Home
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

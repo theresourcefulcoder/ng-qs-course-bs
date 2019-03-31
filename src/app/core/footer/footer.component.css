@@ -1,0 +1,8 @@
+footer {
+    position: absolute; /* Coupled with bottom setting, keeps footer at bottom of page */
+    bottom: 0; /* Coupled with position setting, keeps footer at bottom of page */
+    width: 100%; /* Ensures the footer uses the full width of the page */
+    height: 4rem; /* Sets the height of the footer */
+    padding: .5rem 0; /* Provides some top and bottom padding to keep the content away from the edges of the container */
+    background-color: #e8e8e8; /* Adds a subtle background color set the footer apart from the main body */
+  }
