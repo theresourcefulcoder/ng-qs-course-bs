@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 /**
  * Common shared module for the application
@@ -13,12 +14,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   exports: [
     CommonModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ]
 })
 export class SharedModule { }
