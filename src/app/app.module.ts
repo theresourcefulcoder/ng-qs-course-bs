@@ -7,6 +7,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './features/home/home.module';
+import { AlertComponent } from './core/alert/alert.component';
 
 /**
  * Root module for the application
@@ -15,7 +16,8 @@ import { HomeModule } from './features/home/home.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

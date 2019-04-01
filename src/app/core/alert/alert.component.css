@@ -1,0 +1,21 @@
+#global-alert {
+  margin-bottom: .5rem; /* Reduce bottom margin */
+  padding: .4rem 2rem .4rem .5rem; /* Pad the content to keep away from the edges */
+  word-wrap: break-word; /* Force the text to wrap if too long */
+}
+
+#global-alert fa-icon {
+  float: left; /* Ensure that the text doesn't wrap the icons */
+  margin-top: -.2rem; /* Vertically align the icon */
+}
+
+#global-alert .message {
+  vertical-align : middle; /* Vertically align the message text */
+}
+
+::ng-deep #global-alert button.close { /* Combination of styles to align and size the close button */
+  top: -.125rem;
+  right: .5rem;
+  font-size: 2rem;
+  padding: 0;
+}

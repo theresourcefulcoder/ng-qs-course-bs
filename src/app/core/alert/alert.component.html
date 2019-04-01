@@ -1,0 +1,22 @@
+<section class="row">
+  <div class="col-12" *ngFor="let alert of alerts">
+    <ngb-alert id="global-alert"
+               [type]="alert.type"
+               (close)="removeAlert(alert)">
+      <fa-icon *ngIf="alert.type === 'success'"
+               class="fa-icon-large mr-1"
+               [icon]="faCheckCircle"></fa-icon>
+      <fa-icon *ngIf="alert.type === 'info'"
+               class="fa-icon-large mr-1"
+               [icon]="faInfoCircle"></fa-icon>
+      <fa-icon *ngIf="alert.type === 'warning'"
+               class="fa-icon-large mr-1"
+               [icon]="faExclamationCircle"></fa-icon>
+      <fa-icon *ngIf="alert.type === 'danger'"
+               class="fa-icon-large mr-1"
+               [icon]="faTimesCircle"></fa-icon>
+      <div class="ml-2 message"
+           [innerHTML]="alert.message"></div>
+    </ngb-alert>
+  </div>
+</section>
