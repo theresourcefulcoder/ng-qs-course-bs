@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user",
+      "password": "user",
+      "firstName": "Joe",
+      "lastName": "User",
+      "email": "user@email.com",
+      "active": true,
+      "roles": ["basic"]
+    },
+    {
+      "id": 2,
+      "username": "advanced",
+      "password": "advanced",
+      "firstName": "Joe",
+      "lastName": "Advanced",
+      "email": "advanced",
+      "active": true,
+      "roles": ["advanced"]
+    },
+    {
+      "id": 3,
+      "username": "guest",
+      "password": "guest",
+      "firstName": "Joe",
+      "lastName": "Guest",
+      "email": "guest@email.com",
+      "active": true,
+      "roles": ["readOnly"]
+    },
+    {
+      "id": 4,
+      "username": "inactive",
+      "password": "inactive",
+      "firstName": "Joe",
+      "lastName": "Inactive",
+      "email": "inactive@email.com",
+      "active": false,
+      "roles": [""]
+    },
+    {
+      "id": 5,
+      "username": "admin",
+      "password": "admin",
+      "firstName": "Joe",
+      "lastName": "Admin",
+      "email": "admin@email.com",
+      "active": true,
+      "roles": ["basic","advanced","admin"]
+    }
+  ]
+}
