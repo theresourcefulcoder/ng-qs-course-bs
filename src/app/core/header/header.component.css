@@ -1,17 +1,79 @@
 header {
-    padding-bottom: .5rem; /* Provides some separation between the header and the main content */
+  padding-bottom: .5rem; /* Provides some separation between the header and the main content */
+}
+
+header .navbar {
+  user-select: none; /* Prevent double-clicks from selecting text */
+}
+
+header .navbar .dropdown {
+  cursor: pointer; /* Show a pointer when cursor is over a dropdown */
+}
+
+header .navbar .dropdown .dropdown-menu {
+  border-radius: 0; /* Remove border radius for better matching to the parent container */
+  padding: 0; /* Removed all padding surrounding the link */
+}
+
+@media (max-width: 767px) { /* Only apply below the medium break point */
+  header .navbar .dropdown .dropdown-menu { /* Style drop down when navbar is collapsed */
+    text-align: center;
+    margin-top: 0;
+    position: static;
+    width: 100%;
   }
-  
-  header > nav.navbar {
-    background: linear-gradient(315deg, #00b712 0%, #5aff15 74%); /* Provides the header gradient background color */
+}
+
+@media (min-width: 768px) { /* Only apply at or above the medium break point */
+  header .navbar .dropdown .dropdown-menu { /* Prevent the drop down menu from extending off the screen */
+    right: -1rem !important;
+    left: auto !important;
   }
-  
-  header #navbarContent .nav-link {
-    text-align: center; /* Aligns the links to the center, especially when collapsed */
-  }
-  
-  header #navbarContent .nav-link:focus,
-  header #navbarContent .nav-link:hover {
-    background-color: rgba(0, 183, 18, 0.4); /* Provides contrast to indicate a link is focused or hovered */
-  }
-  
+}
+
+header .navbar .dropdown .dropdown-toggle:after {
+  display: none; /* Don't display the default dropdown toggle icon */
+}
+
+header .navbar .dropdown .dropdown-toggle > div:after { /* Style the div with the down triangle  */
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.3em;
+  vertical-align: middle;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+  transition: transform 500ms ease-in-out;
+}
+
+header .navbar .dropdown.show .dropdown-toggle > div:after {
+  transform: rotate(180deg); /* Rotate the div with the down triangle  */
+}
+
+header .navbar .dropdown .dropdown-menu .dropdown-item {
+  padding: .75rem 1.5rem; /* Pad the drop down link to provide a bigger area for activating it */
+}
+
+header .navbar .dropdown .dropdown-menu .dropdown-item:focus,
+header .navbar .dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #5aff15; /* Provides contrast to indicate a drop down link is focused or hovered */
+  outline: none; /* Don't show the outline */
+}
+
+header > nav.navbar {
+  background: linear-gradient(315deg, #00b712 0%, #5aff15 74%); /* Provides the header gradient background color */
+}
+
+header #navbarContent ul.navbar-nav .dropdown-toggle:focus,
+header #navbarContent ul.navbar-nav .nav-link:focus {
+  background-color: rgba(0, 183, 18, 0.4); /* Provides contrast to indicate a link is focused or hovered */
+  outline: none; /* Don't show the outline */
+}
+
+header #navbarContent .nav-link {
+  width: 100%; /* Ensure the link occupies the full width */
+  text-align: center; /* Aligns the links to the center, especially when collapsed */
+  padding: 1rem; /* Pad the link to provide a bigger area for activating it */
+}

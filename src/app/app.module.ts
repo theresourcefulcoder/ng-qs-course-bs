@@ -8,6 +8,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './features/home/home.module';
 import { AlertComponent } from './core/alert/alert.component';
+import { LoginModule } from './features/login/login.module';
 
 /**
  * Root module for the application
@@ -23,7 +24,8 @@ import { AlertComponent } from './core/alert/alert.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

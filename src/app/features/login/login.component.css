@@ -1,0 +1,13 @@
+button[disabled] {
+  background-color: #ffffff;
+  border: 1px solid #C80000;
+  color: #C80000;
+}
+
+button[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.alert {
+  line-height: 1rem;
+}

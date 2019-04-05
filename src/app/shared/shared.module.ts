@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -12,16 +14,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    NgbModule,
-    FontAwesomeModule
   ],
   exports: [
     CommonModule,
     RouterModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

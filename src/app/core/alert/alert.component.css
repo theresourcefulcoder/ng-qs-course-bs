@@ -5,12 +5,16 @@
 }
 
 #global-alert fa-icon {
-  float: left; /* Ensure that the text doesn't wrap the icons */
+  float: left; /* Ensure that the text isn't forced under the icon */
   margin-top: -.2rem; /* Vertically align the icon */
 }
 
 #global-alert .message {
   vertical-align : middle; /* Vertically align the message text */
+}
+
+#global-alert div {
+  overflow: hidden; /* Prevent error message from wrapping under the icon */
 }
 
 ::ng-deep #global-alert button.close { /* Combination of styles to align and size the close button */
