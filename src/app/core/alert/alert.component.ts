@@ -47,6 +47,8 @@ export class AlertComponent implements OnInit, OnDestroy {
       .subscribe((alert: Alert) => {
         if (alert) {
           this.alerts = [...this.alerts, alert];
+        } else {
+          this.alerts = [];
         }
     });
   }
