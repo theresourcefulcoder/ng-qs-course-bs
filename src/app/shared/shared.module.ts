@@ -12,10 +12,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    NgbModule,
-    FontAwesomeModule
   ],
   exports: [
     CommonModule,
