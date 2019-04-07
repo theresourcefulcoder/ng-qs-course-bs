@@ -31,6 +31,13 @@
             </div>
           </a>
         </li>
+        <li class="nav-item d-lg-flex">
+          <a class="nav-link d-lg-flex flex-lg-column-reverse"
+             [routerLink]="['/supplier']"
+             (click)="navbarCollapsed = true">
+            Supplier
+          </a>
+        </li>
       </ul>
       <ul class="navbar-nav">
         <li *ngIf="!isAuthenticated"

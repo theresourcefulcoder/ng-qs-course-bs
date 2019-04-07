@@ -20,7 +20,7 @@ export class HttpError {
   toString(): string {
     switch (this.error.status) {
       case 0:
-        return 'An error occurred communicating with the server. If this persists, please contact Agora support.';
+        return 'An error occurred communicating with the server.';
       case 401:
         if (window.location.href.indexOf('login') !== -1) {
           return 'The user credentials supplied could not be validated.';
@@ -32,9 +32,9 @@ export class HttpError {
       case 404:
         return 'The resource was not found on the server.';
       case 500:
-        return 'A server error occurred. If this persists, please contact Agora support.';
+        return 'A server error occurred.';
       default:
-        return 'An error occurred communicating with the server. If this persists, please contact Agora support.';
+        return 'An error occurred communicating with the server.';
     }
   }
 }

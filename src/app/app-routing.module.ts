@@ -5,7 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
  * Defined routes for the root AppRoutingModule
  */
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'supplier', loadChildren: './features/supplier/supplier.module#SupplierModule' }
 ];
 
 /**
