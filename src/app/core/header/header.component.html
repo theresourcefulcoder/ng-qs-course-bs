@@ -3,12 +3,12 @@
     <a class="navbar-brand"
        tabindex="-1"
        aria-label="Acme Products"
-       (click)="navbarCollapsed = true">
+       (click)="navbarCollapsed=true">
       ACME
     </a>
     <button class="navbar-toggler navbar-toggler-right"
             type="button"
-            (click)="navbarCollapsed = !navbarCollapsed"
+            (click)="navbarCollapsed=!navbarCollapsed"
             [attr.aria-expanded]="!navbarCollapsed"
             aria-controls="navbarContent"
             aria-expanded="false"
@@ -20,9 +20,9 @@
          class="collapse navbar-collapse align-self-stretch"
          [ngbCollapse]="navbarCollapsed">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item d-lg-flex">
-          <a class="nav-link d-lg-flex flex-lg-column-reverse"
-             (click)="navbarCollapsed = true">
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="navbarCollapsed=true">
             Home
           </a>
         </li>
