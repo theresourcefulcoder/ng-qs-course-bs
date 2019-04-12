@@ -1,3 +1,98 @@
 {
-
+  "announcements": [
+    {
+      "id": 1,
+      "imageUrl": "./assets/images/east-break-room.jpg",
+      "imageAltText": "Break Room Renovation",
+      "date": "2019-04-06",
+      "title": "Break Room Renovation",
+      "content": "After several months of dust and inconvenience, we are happy to announce that the east break room renovation is complete and reopened. We apologize for the inconvenience but, rest assured, that the makeover was worth the sacrifice! We will begin on the north break room renovation next month."
+    },
+    {
+      "id": 2,
+      "imageUrl": "./assets/images/company-picnic-reminder.jpg",
+      "imageAltText": "Company Picnic Reminder",
+      "date": "2019-05-07",
+      "title": "Company Picnic Reminder",
+      "content": "We are just under a month until the company picnic on June 4th! We hope to see everyone there. As always, we encourage family attendance and will have planned activities to keep the kids entertained. :) If there are any dietary considerations, please inform your department manager by the end of the week."
+    },
+    {
+      "id": 3,
+      "imageUrl": "./assets/images/new-employee-anthony.jpg",
+      "imageAltText": "New Employee Announcement",
+      "date": "2019-05-08",
+      "title": "New Employee Announcement",
+      "content": "Please welcome Anthony Marcole to the ACME team! His first day will be next Monday and he will be working in the marketing department. Please take a moment out of your busy schedules and stop by and introduce yourself."
+    }
+  ],
+  "menus": [
+    {
+      "title": "Menu",
+      "id": "main-menu",
+      "links": [
+        {
+          "title": "Link 1",
+          "path": "/path",
+          "disabled": false
+        },
+        {
+          "title": "Link 2",
+          "path": "/path",
+          "disabled": false
+        },
+        {
+          "title": "Link 3",
+          "path": "/path",
+          "disabled": true
+        }
+      ],
+      "disabled": false
+    },
+    {
+      "title": "Product Menu",
+      "id": "product-menu",
+      "links": [
+        {
+          "title": "Link 1",
+          "path": "/path",
+          "disabled": false
+        },
+        {
+          "title": "Link 2",
+          "path": "/path",
+          "disabled": false
+        },
+        {
+          "title": "Link 3",
+          "path": "/path",
+          "disabled": false
+        }
+      ],
+      "disabled": true
+    }
+  ],
+  "adminMenus": [
+    {
+      "title": "Admin Menu",
+      "id": "admin-menu",
+      "links": [
+        {
+          "title": "Manage Suppliers",
+          "path": "/supplier",
+          "disabled": false
+        },
+        {
+          "title": "Link 2",
+          "path": "/path",
+          "disabled": false
+        },
+        {
+          "title": "Link 3",
+          "path": "/path",
+          "disabled": false
+        }
+      ],
+      "disabled": false
+    }
+  ]
 }

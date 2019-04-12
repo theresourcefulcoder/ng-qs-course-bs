@@ -1,3 +1,44 @@
-<p>
-  home works!
-</p>
+<section>
+  <ng-container *ngIf="!showAuthorizedUseMessage">
+    <h3 class="text-center mt-2">Company News</h3>
+    <br>
+    <div class="row justify-content-center">
+      <div *ngFor="let announcement of announcements"
+           class="col-sm-10 col-md-8 col-lg-5 col-xl-3 card mr-md-4 py-3 mb-3">
+        <img [src]="announcement.imageUrl"
+             class="card-img-top mb-2"
+             [alt]="announcement.imageAltText">
+        <div class="card-title font-weight-bold">
+          {{ announcement.title }}
+        </div>
+        <p class="text-secondary">
+          {{ announcement.date | date: 'longDate'}}
+        </p>
+        <p class="card-text text-justify">
+          {{ announcement.content }}
+        </p>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="showAuthorizedUseMessage">
+    <div class="row justify-content-center mt-3">
+      <h3>Authorized Use Only</h3>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-light text-justify py-3">
+        This computer system is for use by authorized users only.
+        This system is actively monitored and any use of this system
+        expresses consent to such monitoring. Unauthorized use of this
+        computer system may result in criminal or civil liability.
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-10 col-sm-6 col-md-5 col-lg-4 col-xl-3 bg-light text-justify py-3">
+        The Help Desk is available Monday-Friday 7am to 6pm EST to answer
+        any questions you may have or assist with any problems. They can be
+        reached at: 1-800-000-0000.
+      </div>
+    </div>
+  </ng-container>
+</section>

@@ -104,4 +104,11 @@ export class AuthenticationService {
   getAccessToken(): string {
     return this.accessToken;
   }
+
+  /**
+   * Function to determine if the user has the admin role
+   */
+  hasAdminRole(): boolean {
+    return this.user.roles.includes('admin');
+  }
 }

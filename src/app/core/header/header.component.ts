@@ -1,8 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { faHome, faUser, faSignInAlt, faSignOutAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Subscription, Observable } from 'rxjs';
+
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
-import { Subscription } from 'rxjs';
+import { NavbarMenu } from './models/navbar-menu.model';
+import { HttpService } from 'src/app/shared/services/http.service';
+import { environment } from 'src/environments/environment';
 
 /**
  * Core header component
@@ -24,6 +28,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
   usernameSub: Subscription;
   username = '';
+  menus$: Observable<NavbarMenu[]>;
+  adminMenus$: Observable<NavbarMenu[]>;
 
   /**
    * Font Awesome Icon variables
@@ -36,7 +42,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   /**
    * Constructor
    */
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService,
+              private http: HttpService) { }
 
   /**
    * OnInit Lifecycle Hook
@@ -46,6 +53,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe(
         data => {
           this.isAuthenticated = data;
+          this.menus$ = this.http.read(environment.serverApiPath + 'menus');
+          this.adminMenus$ = this.http.read(environment.serverApiPath + 'adminMenus');
         }
       );
 
@@ -70,5 +79,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
    */
   logout(): void {
     this.authenticationService.logout();
+  }
+
+  /**
+   * Function to determine if the user has the admin role
+   */
+  hasAdminRole(): boolean {
+    return this.authenticationService.hasAdminRole();
   }
 }

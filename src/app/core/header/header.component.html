@@ -4,12 +4,12 @@
        [routerLink]="['/home']"
        tabindex="-1"
        aria-label="Acme Products"
-       (click)="navbarCollapsed = true">
+       (click)="navbarCollapsed=true">
       ACME
     </a>
     <button class="navbar-toggler navbar-toggler-right"
             type="button"
-            (click)="navbarCollapsed = !navbarCollapsed"
+            (click)="navbarCollapsed=!navbarCollapsed"
             [attr.aria-expanded]="!navbarCollapsed"
             aria-controls="navbarContent"
             aria-expanded="false"
@@ -21,30 +21,86 @@
          class="collapse navbar-collapse align-self-stretch"
          [ngbCollapse]="navbarCollapsed">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item d-lg-flex">
-          <a class="nav-link d-lg-flex flex-lg-column-reverse"
+        <li class="nav-item">
+          <a class="nav-link"
              [routerLink]="['/home']"
-             (click)="navbarCollapsed = true">
+             [routerLinkActive]="['active']"
+             (click)="navbarCollapsed=true">
             <div title="Acme Home">
               <fa-icon [icon]="faHome" class="mr-1"></fa-icon>
               Home
             </div>
           </a>
         </li>
-        <li class="nav-item d-lg-flex">
-          <a class="nav-link d-lg-flex flex-lg-column-reverse"
-             [routerLink]="['/supplier']"
-             (click)="navbarCollapsed = true">
-            Supplier
-          </a>
-        </li>
+        <ng-container *ngIf="isAuthenticated">
+          <ng-container *ngFor="let menu of menus$ | async">
+            <li *ngIf="!menu.disabled"
+                class="nav-item dropdown"
+                ngbDropdown>
+              <a class="nav-link dropdown-toggle"
+                 id="menu.id"
+                 tabindex="0"
+                 ngbDropdownToggle>
+                <div>
+                  {{ menu.title }}
+                </div>
+              </a>
+              <div class="dropdown-menu"
+                   aria-labelledby="menu.id"
+                   ngbDropdownMenu>
+                <ng-container *ngFor="let link of menu.links">
+                  <a *ngIf="!link.disabled"
+                     ngbDropdownItem
+                     class="dropdown-item"
+                     [routerLink]="['link.path']"
+                     [routerLinkActive]="['active']"
+                     (click)="navbarCollapsed=true">
+                    {{ link.title }}
+                  </a>
+                  <div *ngIf="link.disabled"
+                       class="dropdown-item disabledNavLink">
+                    {{ link.title }}
+                  </div>
+                </ng-container>
+              </div>
+            </li>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="isAuthenticated && hasAdminRole()">
+          <li *ngFor="let menu of adminMenus$ | async"
+              class="nav-item dropdown"
+              ngbDropdown>
+            <a class="nav-link dropdown-toggle"
+               id="menu.id"
+               tabindex="0"
+               ngbDropdownToggle>
+              <div>
+                {{ menu.title }}
+              </div>
+            </a>
+            <div class="dropdown-menu"
+                 aria-labelledby="menu.id"
+                 ngbDropdownMenu>
+              <a *ngFor="let link of menu.links"
+                 ngbDropdownItem
+                 class="dropdown-item"
+                 [routerLink]="['link.path']"
+                 [routerLinkActive]="['active']"
+                 (click)="navbarCollapsed=true"
+                 [disabled]="link.disabled">
+                {{ link.title }}
+              </a>
+            </div>
+          </li>
+          </ng-container>
       </ul>
       <ul class="navbar-nav">
         <li *ngIf="!isAuthenticated"
-            class="nav-item d-lg-flex">
+            class="nav-item">
           <a [routerLink]="['/login']"
-             class="nav-link d-lg-flex flex-lg-column-reverse"
-             (click)="navbarCollapsed = true">
+             class="nav-link"
+             (click)="navbarCollapsed=true">
             <div>
               <fa-icon [icon]="faSignInAlt" class="mr-2"></fa-icon>
               Login
@@ -63,7 +119,7 @@
               {{ username }}
             </div>
           </a>
-          <div class="dropdown-menu dropdown-menu-right"
+          <div class="dropdown-menu"
                aria-labelledby="header-user-dropdown"
                ngbDropdownMenu>
             <a ngbDropdownItem
