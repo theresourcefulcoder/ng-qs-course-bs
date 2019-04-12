@@ -7,7 +7,7 @@ html {
 }
 
 main {
-  padding-bottom: 3.75rem;  /* Padding to prevent the main body from extending behind the footer */
+  padding-bottom: 4.5rem;  /* Padding to prevent the main body from extending behind the footer */
 }
 
 .fa-icon-small {
