@@ -25,7 +25,7 @@ header .navbar .dropdown .dropdown-menu {
 }
 
 @media (min-width: 768px) { /* Only apply at or above the medium break point */
-  header .navbar .dropdown .dropdown-menu { /* Prevent the drop down menu from extending off the screen */
+  header .navbar .dropdown .dropdown-menu[aria-labelledby="header-user-dropdown"] { /* Prevent the drop down menu from extending off the screen */
     right: -1rem !important;
     left: auto !important;
   }
@@ -77,4 +77,9 @@ header #navbarContent .nav-link {
   width: 100%; /* Ensure the link occupies the full width */
   text-align: center; /* Aligns the links to the center, especially when collapsed */
   padding: 1rem; /* Pad the link to provide a bigger area for activating it */
+}
+
+header #navbarContent .disabledNavLink {
+  color:gray;
+  cursor: not-allowed;
 }

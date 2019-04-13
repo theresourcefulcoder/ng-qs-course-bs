@@ -7,7 +7,7 @@ html {
 }
 
 main {
-  padding-bottom: 3.75rem;  /* Padding to prevent the main body from extending behind the footer */
+  padding-bottom: 4.5rem;  /* Padding to prevent the main body from extending behind the footer */
 }
 
 .fa-icon-small {
@@ -20,4 +20,10 @@ main {
 
 .fa-icon-large {
   font-size: 1.25rem;       /* Large font size setting for the Font Awesome icons */
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: rgba(0, 183, 18, 0.7); /* Provides contrast to indicate a link is active */
+  color: #000000; /* Set text color to black */
 }
