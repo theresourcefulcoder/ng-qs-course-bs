@@ -4,12 +4,12 @@
        [routerLink]="['/home']"
        tabindex="-1"
        aria-label="Acme Products"
-       (click)="navbarCollapsed = true">
+       (click)="navbarCollapsed=true">
       ACME
     </a>
     <button class="navbar-toggler navbar-toggler-right"
             type="button"
-            (click)="navbarCollapsed = !navbarCollapsed"
+            (click)="navbarCollapsed=!navbarCollapsed"
             [attr.aria-expanded]="!navbarCollapsed"
             aria-controls="navbarContent"
             aria-expanded="false"
@@ -21,10 +21,10 @@
          class="collapse navbar-collapse align-self-stretch"
          [ngbCollapse]="navbarCollapsed">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item d-lg-flex">
-          <a class="nav-link d-lg-flex flex-lg-column-reverse"
+        <li class="nav-item">
+          <a class="nav-link"
              [routerLink]="['/home']"
-             (click)="navbarCollapsed = true">
+             (click)="navbarCollapsed=true">
             <div title="Acme Home">
               <fa-icon [icon]="faHome" class="mr-1"></fa-icon>
               Home
@@ -34,10 +34,10 @@
       </ul>
       <ul class="navbar-nav">
         <li *ngIf="!isAuthenticated"
-            class="nav-item d-lg-flex">
+            class="nav-item">
           <a [routerLink]="['/login']"
-             class="nav-link d-lg-flex flex-lg-column-reverse"
-             (click)="navbarCollapsed = true">
+             class="nav-link"
+             (click)="navbarCollapsed=true">
             <div>
               <fa-icon [icon]="faSignInAlt" class="mr-2"></fa-icon>
               Login
@@ -59,9 +59,9 @@
           <div class="dropdown-menu dropdown-menu-right"
                aria-labelledby="header-user-dropdown"
                ngbDropdownMenu>
-            <a ngbDropdownItem
-               class="dropdown-item"
+            <a class="dropdown-item"
                tabindex="0"
+               ngbDropdownItem
                (keyup.enter)="logout()"
                (click)="logout()">
               <div>
