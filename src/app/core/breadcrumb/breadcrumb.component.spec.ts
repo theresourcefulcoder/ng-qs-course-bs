@@ -1,17 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { SupplierComponent } from './supplier.component';
+import { BreadcrumbComponent } from './breadcrumb.component';
 
-describe('SupplierComponent', () => {
-  let component: SupplierComponent;
-  let fixture: ComponentFixture<SupplierComponent>;
+describe('BreadcrumbComponent', () => {
+  let component: BreadcrumbComponent;
+  let fixture: ComponentFixture<BreadcrumbComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        SupplierComponent
-      ],
+      declarations: [ BreadcrumbComponent ],
       imports: [
         RouterTestingModule
       ]
@@ -20,7 +18,7 @@ describe('SupplierComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SupplierComponent);
+    fixture = TestBed.createComponent(BreadcrumbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

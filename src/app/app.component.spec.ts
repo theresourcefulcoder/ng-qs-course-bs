@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { AlertComponent } from './core/alert/alert.component';
+import { BreadcrumbComponent } from './core/breadcrumb/breadcrumb.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -23,7 +24,8 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         FooterComponent,
-        AlertComponent
+        AlertComponent,
+        BreadcrumbComponent
       ],
     }).compileComponents();
   }));

@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '',
     component: SupplierComponent,
     canActivate: [AuthenticationGuard, AuthorizationGuard],
-    data: { roles: ['admin'] }
+    data: { breadcrumb: 'Manage Suppliers', roles: ['admin'] }
   }
 ];
 

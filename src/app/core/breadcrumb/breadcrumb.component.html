@@ -1,0 +1,18 @@
+<section class="col-12 p-1 pl-2 mb-2">
+  <ol class="breadcrumb mb-0 p-0">
+    <li class="breadcrumb-item">
+      <a routerLink=""
+         class="breadcrumb-link">
+        ACME
+      </a>
+    </li>
+    <li *ngFor="let breadcrumb of breadcrumbs"
+        class="breadcrumb-item">
+      <a class="breadcrumb-link"
+         [routerLink]="breadcrumb.routerLink"
+         [queryParams]="breadcrumb.queryParams">
+        {{ breadcrumb.title }}
+      </a>
+    </li>
+  </ol>
+</section>

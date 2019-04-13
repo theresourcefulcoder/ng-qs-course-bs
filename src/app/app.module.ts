@@ -10,6 +10,8 @@ import { HomeModule } from './features/home/home.module';
 import { AlertComponent } from './core/alert/alert.component';
 import { LoginModule } from './features/login/login.module';
 import { CustomErrorHandler } from './shared/errors/custom-error-handler';
+import { PageNotFoundModule } from './features/page-not-found/page-not-found.module';
+import { BreadcrumbComponent } from './core/breadcrumb/breadcrumb.component';
 
 /**
  * Root module for the application
@@ -19,14 +21,16 @@ import { CustomErrorHandler } from './shared/errors/custom-error-handler';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    AlertComponent
+    AlertComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     HomeModule,
-    LoginModule
+    LoginModule,
+    PageNotFoundModule // Must be last due to the wildcard route
   ],
   providers: [
     { provide: ErrorHandler, useClass: CustomErrorHandler }

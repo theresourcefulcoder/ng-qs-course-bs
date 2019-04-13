@@ -1,0 +1,16 @@
+.breadcrumb {
+  background-color: #ffffff;      /* Ensure the background is white to match the container */
+  font-size: 1.25rem;               /* Increase the breadcrumbs font size */
+}
+
+.breadcrumb > li + li:before {
+  content: '>>';                    /* Characters to add between the breadcrumbs */
+}
+
+.breadcrumb .breadcrumb-link {
+  color: rgba(0, 183, 18, 0.7);   /* Color the breadcrumb links */
+}
+
+.breadcrumb .breadcrumb-item:last-child .breadcrumb-link:last-child {
+  color: #000000;                 /* Make the last breadcrumb black to signify the current page */
+}

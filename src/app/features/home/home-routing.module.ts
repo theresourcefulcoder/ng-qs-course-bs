@@ -7,7 +7,7 @@ import { HomeComponent } from './home.component';
  * Defined routes for the HomeRoutingModule
  */
 const routes: Routes = [
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent, data: { breadcrumb: 'Home'} }
 ];
 
 /**
