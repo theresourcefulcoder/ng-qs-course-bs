@@ -52,7 +52,7 @@
                   <a *ngIf="!link.disabled"
                      ngbDropdownItem
                      class="dropdown-item"
-                     [routerLink]="['link.path']"
+                     [routerLink]="link.path"
                      [routerLinkActive]="['active']"
                      (click)="navbarCollapsed=true">
                     {{ link.title }}
@@ -85,7 +85,7 @@
               <a *ngFor="let link of menu.links"
                  ngbDropdownItem
                  class="dropdown-item"
-                 [routerLink]="['link.path']"
+                 [routerLink]="link.path"
                  [routerLinkActive]="['active']"
                  (click)="navbarCollapsed=true"
                  [disabled]="link.disabled">
