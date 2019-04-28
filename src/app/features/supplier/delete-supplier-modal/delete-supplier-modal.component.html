@@ -1,0 +1,34 @@
+<header class="modal-header">
+  <h4 class="modal-title">Delete Supplier</h4>
+  <button type="button"
+          class="close"
+          aria-label="Close"
+          (click)="activeModal.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</header>
+
+<main class="modal-body">
+  <div class="row mt-4">
+    <div class="col-12 text-center">
+      <span class="font-weight-bold">Supplier Name: </span>
+      {{ supplier?.name }}
+    </div>
+  </div>
+  <p class="text-center mt-3">
+    Deleted records cannot be restored. Do you wish to continue?
+  </p>
+</main>
+
+<footer class="modal-footer">
+  <button type="button"
+          class="btn btn-secondary"
+          (click)="deleteSupplier(supplier.id)">
+    Yes
+  </button>
+  <button type="button"
+          class="btn btn-secondary"
+          (click)="activeModal.close()">
+    No
+  </button>
+</footer>

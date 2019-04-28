@@ -94,5 +94,551 @@
       ],
       "disabled": false
     }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "name": "Canada",
+      "abbreviation": "CA"
+    },
+    {
+      "id": 2,
+      "name": "United States",
+      "abbreviation": "US"
+    }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "name": "Alberta",
+      "abbreviation": "AB",
+      "countryId": 1
+    },
+    {
+      "id": 2,
+      "name": "British Columbia",
+      "abbreviation": "BC",
+      "countryId": 1
+    },
+    {
+      "id": 3,
+      "name": "Manitoba",
+      "abbreviation": "MB",
+      "countryId": 1
+    },
+    {
+      "id": 4,
+      "name": "New Brunswick",
+      "abbreviation": "NB",
+      "countryId": 1
+    },
+    {
+      "id": 5,
+      "name": "Newfoundland and Labrador",
+      "abbreviation": "NL",
+      "countryId": 1
+    },
+    {
+      "id": 6,
+      "name": "Northwest Territories",
+      "abbreviation": "NT",
+      "countryId": 1
+    },
+    {
+      "id": 7,
+      "name": "Nova Scotia",
+      "abbreviation": "NS",
+      "countryId": 1
+    },
+    {
+      "id": 8,
+      "name": "Nunavut",
+      "abbreviation": "NU",
+      "countryId": 1
+    },
+    {
+      "id": 9,
+      "name": "Ontario",
+      "abbreviation": "ON",
+      "countryId": 1
+    },
+    {
+      "id": 10,
+      "name": "Prince Edward Island",
+      "abbreviation": "PE",
+      "countryId": 1
+    },
+    {
+      "id": 11,
+      "name": "Quebec",
+      "abbreviation": "QC",
+      "countryId": 1
+    },
+    {
+      "id": 12,
+      "name": "Saskatchewan",
+      "abbreviation": "SK",
+      "countryId": 1
+    },
+    {
+      "id": 13,
+      "name": "Yukon",
+      "abbreviation": "YT",
+      "countryId": 1
+    },
+    {
+      "id": 14,
+      "name": "Alabama",
+      "abbreviation": "AL",
+      "countryId": 2
+    },
+    {
+      "id": 15,
+      "name": "Alaska",
+      "abbreviation": "AK",
+      "countryId": 2
+    },
+    {
+      "id": 16,
+      "name": "American Samoa",
+      "abbreviation": "AS",
+      "countryId": 2
+    },
+    {
+      "id": 17,
+      "name": "Arizona",
+      "abbreviation": "AZ",
+      "countryId": 2
+    },
+    {
+      "id": 18,
+      "name": "Arkansas",
+      "abbreviation": "AR",
+      "countryId": 2
+    },
+    {
+      "id": 19,
+      "name": "California",
+      "abbreviation": "CA",
+      "countryId": 2
+    },
+    {
+      "id": 20,
+      "name": "Colorado",
+      "abbreviation": "CO",
+      "countryId": 2
+    },
+    {
+      "id": 21,
+      "name": "Connecticut",
+      "abbreviation": "CT",
+      "countryId": 2
+    },
+    {
+      "id": 22,
+      "name": "Delaware",
+      "abbreviation": "DE",
+      "countryId": 2
+    },
+    {
+      "id": 23,
+      "name": "District of Columbia",
+      "abbreviation": "DC",
+      "countryId": 2
+    },
+    {
+      "id": 24,
+      "name": "Federated States of Micronesia",
+      "abbreviation": "FM",
+      "countryId": 2
+    },
+    {
+      "id": 25,
+      "name": "Florida",
+      "abbreviation": "FL",
+      "countryId": 2
+    },
+    {
+      "id": 26,
+      "name": "Georgia",
+      "abbreviation": "GA",
+      "countryId": 2
+    },
+    {
+      "id": 27,
+      "name": "Guam",
+      "abbreviation": "GU",
+      "countryId": 2
+    },
+    {
+      "id": 28,
+      "name": "Hawaii",
+      "abbreviation": "HI",
+      "countryId": 2
+    },
+    {
+      "id": 29,
+      "name": "Idaho",
+      "abbreviation": "ID",
+      "countryId": 2
+    },
+    {
+      "id": 30,
+      "name": "Illinois",
+      "abbreviation": "IL",
+      "countryId": 2
+    },
+    {
+      "id": 31,
+      "name": "Indiana",
+      "abbreviation": "IN",
+      "countryId": 2
+    },
+    {
+      "id": 32,
+      "name": "Iowa",
+      "abbreviation": "IA",
+      "countryId": 2
+    },
+    {
+      "id": 33,
+      "name": "Kansas",
+      "abbreviation": "KS",
+      "countryId": 2
+    },
+    {
+      "id": 34,
+      "name": "Kentucky",
+      "abbreviation": "KY",
+      "countryId": 2
+    },
+    {
+      "id": 35,
+      "name": "Louisiana",
+      "abbreviation": "LA",
+      "countryId": 2
+    },
+    {
+      "id": 36,
+      "name": "Maine",
+      "abbreviation": "ME",
+      "countryId": 2
+    },
+    {
+      "id": 37,
+      "name": "Marshall Islands",
+      "abbreviation": "MH",
+      "countryId": 2
+    },
+    {
+      "id": 38,
+      "name": "Maryland",
+      "abbreviation": "MD",
+      "countryId": 2
+    },
+    {
+      "id": 39,
+      "name": "Massachusetts",
+      "abbreviation": "MA",
+      "countryId": 2
+    },
+    {
+      "id": 40,
+      "name": "Michigan",
+      "abbreviation": "MI",
+      "countryId": 2
+    },
+    {
+      "id": 41,
+      "name": "Minnesota",
+      "abbreviation": "MN",
+      "countryId": 2
+    },
+    {
+      "id": 42,
+      "name": "Mississippi",
+      "abbreviation": "MS",
+      "countryId": 2
+    },
+    {
+      "id": 43,
+      "name": "Missouri",
+      "abbreviation": "MO",
+      "countryId": 2
+    },
+    {
+      "id": 44,
+      "name": "Montana",
+      "abbreviation": "MT",
+      "countryId": 2
+    },
+    {
+      "id": 45,
+      "name": "Nebraska",
+      "abbreviation": "NE",
+      "countryId": 2
+    },
+    {
+      "id": 46,
+      "name": "Nevada",
+      "abbreviation": "NV",
+      "countryId": 2
+    },
+    {
+      "id": 47,
+      "name": "New Hampshire",
+      "abbreviation": "NH",
+      "countryId": 2
+    },
+    {
+      "id": 48,
+      "name": "New Jersey",
+      "abbreviation": "NJ",
+      "countryId": 2
+    },
+    {
+      "id": 49,
+      "name": "New Mexico",
+      "abbreviation": "NM",
+      "countryId": 2
+    },
+    {
+      "id": 50,
+      "name": "New York",
+      "abbreviation": "NY",
+      "countryId": 2
+    },
+    {
+      "id": 51,
+      "name": "North Carolina",
+      "abbreviation": "NC",
+      "countryId": 2
+    },
+    {
+      "id": 52,
+      "name": "North Dakota",
+      "abbreviation": "ND",
+      "countryId": 2
+    },
+    {
+      "id": 53,
+      "name": "Northern Mariana Islands",
+      "abbreviation": "MP",
+      "countryId": 2
+    },
+    {
+      "id": 54,
+      "name": "Ohio",
+      "abbreviation": "OH",
+      "countryId": 2
+    },
+    {
+      "id": 55,
+      "name": "Oklahoma",
+      "abbreviation": "OK",
+      "countryId": 2
+    },
+    {
+      "id": 56,
+      "name": "Oregon",
+      "abbreviation": "OR",
+      "countryId": 2
+    },
+    {
+      "id": 57,
+      "name": "Palau",
+      "abbreviation": "PW",
+      "countryId": 2
+    },
+    {
+      "id": 58,
+      "name": "Pennsylvania",
+      "abbreviation": "PA",
+      "countryId": 2
+    },
+    {
+      "id": 59,
+      "name": "Puerto Rico",
+      "abbreviation": "PR",
+      "countryId": 2
+    },
+    {
+      "id": 60,
+      "name": "Rhode Island",
+      "abbreviation": "RI",
+      "countryId": 2
+    },
+    {
+      "id": 61,
+      "name": "South Carolina",
+      "abbreviation": "SC",
+      "countryId": 2
+    },
+    {
+      "id": 62,
+      "name": "South Dakota",
+      "abbreviation": "SD",
+      "countryId": 2
+    },
+    {
+      "id": 63,
+      "name": "Tennessee",
+      "abbreviation": "TN",
+      "countryId": 2
+    },
+    {
+      "id": 64,
+      "name": "Texas",
+      "abbreviation": "TX",
+      "countryId": 2
+    },
+    {
+      "id": 65,
+      "name": "Utah",
+      "abbreviation": "UT",
+      "countryId": 2
+    },
+    {
+      "id": 66,
+      "name": "Vermont",
+      "abbreviation": "VT",
+      "countryId": 2
+    },
+    {
+      "id": 67,
+      "name": "Virgin Islands",
+      "abbreviation": "VI",
+      "countryId": 2
+    },
+    {
+      "id": 68,
+      "name": "Virginia",
+      "abbreviation": "VA",
+      "countryId": 2
+    },
+    {
+      "id": 69,
+      "name": "Washington",
+      "abbreviation": "WA",
+      "countryId": 2
+    },
+    {
+      "id": 70,
+      "name": "West Virginia",
+      "abbreviation": "WV",
+      "countryId": 2
+    },
+    {
+      "id": 71,
+      "name": "Wisconsin",
+      "abbreviation": "WI",
+      "countryId": 2
+    },
+    {
+      "id": 72,
+      "name": "Wyoming",
+      "abbreviation": "WY",
+      "countryId": 2
+    }
+  ],
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "Midwest Supply",
+      "address1": "2300 Commerce Lane",
+      "address2": "",
+      "city": "Chicago",
+      "state": 30,
+      "zipCode": "60624",
+      "country": 2,
+      "contactName": "Frank Morgan",
+      "contactPhoneNumber": "773-423-8847",
+      "contactEmail": "frank@midwestsupply.com",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "West Coast Products",
+      "address1": "145 Market Square",
+      "address2": "",
+      "city": "Portland",
+      "state": 56,
+      "zipCode": "97220",
+      "country": 2,
+      "contactName": "Jane Morrow",
+      "contactPhoneNumber": "503-731-1834",
+      "contactEmail": "jane@wcproducts.com",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Deep South Suppliers",
+      "address1": "14521 US Hwy 10",
+      "address2": "",
+      "city": "Slidell",
+      "state": 35,
+      "zipCode": "70461",
+      "country": 2,
+      "contactName": "Mary Witmore",
+      "contactPhoneNumber": "985-506-2946",
+      "contactEmail": "mary@deepsouthsuppliers.com",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Mountain Pass Products",
+      "address1": "27 Forest Lane",
+      "address2": "",
+      "city": "Billings",
+      "state": 44,
+      "zipCode": "59102",
+      "country": 2,
+      "contactName": "John Augusta",
+      "contactPhoneNumber": "406-423-8847",
+      "contactEmail": "john@mountainpass.com",
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Coastal Products",
+      "address1": "1184 Beachfront Ave",
+      "address2": "",
+      "city": "Morehead City",
+      "state": 51,
+      "zipCode": "28557",
+      "country": 2,
+      "contactName": "Abigail Johnson",
+      "contactPhoneNumber": "252-618-4937",
+      "contactEmail": "abby@coastalproducts.com",
+      "active": true
+    },
+    {
+      "id": 6,
+      "name": "River Valley Suppliers",
+      "address1": "15637 Morgan Hwy",
+      "address2": "",
+      "city": "Saint Paul",
+      "state": 41,
+      "zipCode": "55108",
+      "country": 2,
+      "contactName": "Martha Scott",
+      "contactPhoneNumber": "651-916-1073",
+      "contactEmail": "martha@rivervalley.com",
+      "active": true
+    },
+    {
+      "id": 7,
+      "name": "Desert Plains Products",
+      "address1": "15687 US Hwy 31",
+      "address2": "",
+      "city": "Scottsdale",
+      "state": 17,
+      "zipCode": "85252",
+      "country": 2,
+      "contactName": "Martin Taylor",
+      "contactPhoneNumber": "480-497-1683",
+      "contactEmail": "martin@desertplainsproducts.com",
+      "active": true
+    }
   ]
 }

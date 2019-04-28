@@ -54,13 +54,13 @@ export class HttpService {
    * @param endpoint - endpoint to call
    * @param payload - payload to pass
    */
-  update(endpoint: string, payload: any): Observable<any> {
+  update(endpoint: string, id: number, payload: any): Observable<any> {
     const token = this.authenticationService.getAccessToken();
     const body = JSON.stringify(payload);
     const httpOptions = {headers: new HttpHeaders().set('Content-Type', 'application/json')
                                                    .set('Authorization', 'Bearer ' + token)};
 
-    return this.http.put(endpoint, body, httpOptions);
+    return this.http.put(`${endpoint}/${id}`, body, httpOptions);
   }
 
   /**

@@ -1,36 +1,35 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { SupplierComponent } from './supplier.component';
+import { CreateSupplierModalComponent } from './create-supplier-modal.component';
 
-describe('SupplierComponent', () => {
-  let component: SupplierComponent;
-  let fixture: ComponentFixture<SupplierComponent>;
+describe('CreateSupplierModalComponent', () => {
+  let component: CreateSupplierModalComponent;
+  let fixture: ComponentFixture<CreateSupplierModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        SupplierComponent
+        CreateSupplierModalComponent
       ],
       imports: [
         RouterTestingModule,
-        FontAwesomeModule,
-        NgbPaginationModule,
         ReactiveFormsModule,
-        FormsModule,
         HttpClientModule
+      ],
+      providers: [
+        NgbActiveModal
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SupplierComponent);
+    fixture = TestBed.createComponent(CreateSupplierModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

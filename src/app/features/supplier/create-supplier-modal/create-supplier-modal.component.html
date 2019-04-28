@@ -1,0 +1,257 @@
+<header class="modal-header">
+  <h4 class="modal-title">Create Supplier</h4>
+  <button type="button"
+          class="close"
+          aria-label="Close"
+          (click)="activeModal.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</header>
+
+<main class="modal-body">
+  <form [formGroup]="form"
+        (ngSubmit)="submitForm(form.value)">
+    <div class="text-danger mb-2">
+      * Required Field
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="supplier-name">
+          *Name:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="supplier-name"
+               type="text"
+               class="form-control"
+               formControlName="name"
+               [ngClass]="{ 'is-invalid': isInvalid(name) }">
+        <div *ngIf="isInvalid(name)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="name?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="address-1">
+          *Address 1:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="address-1"
+               type="text"
+               class="form-control"
+               formControlName="address1"
+               [ngClass]="{ 'is-invalid': isInvalid(address1) }">
+        <div *ngIf="isInvalid(address1)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="address1?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="address-2">
+          Address 2:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="address-2"
+               type="text"
+               class="form-control"
+               formControlName="address2">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="country">
+          *Country:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <select id="country"
+                class="form-control"
+                formControlName="country"
+                [ngClass]="{ 'is-invalid': isInvalid(country) }"
+                (change)="filterStates(country.value)">
+          <option value="">Select...</option>
+          <option *ngFor="let country of countries"
+                  [value]="country?.id">
+            {{ country?.name + ' (' + country?.abbreviation + ')' }}
+          </option>
+        </select>
+        <div *ngIf="isInvalid(country)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="country?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="state">
+          *State:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <select id="state"
+                class="form-control"
+                formControlName="state"
+                [ngClass]="{ 'is-invalid': isInvalid(state) }">
+          <option value="">Select...</option>
+          <option *ngFor="let state of filteredStates"
+                  [value]="state?.id">
+            {{ state?.name + ' (' + state?.abbreviation + ')' }}
+          </option>
+        </select>
+        <div *ngIf="isInvalid(state)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="state?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="city">
+          *City:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="city"
+               type="text"
+               class="form-control"
+               formControlName="city"
+               [ngClass]="{ 'is-invalid': isInvalid(city) }">
+        <div *ngIf="isInvalid(city)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="city?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="zip-code">
+          *Zip Code:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="zip-code"
+               type="text"
+               class="form-control"
+               formControlName="zipCode"
+               [ngClass]="{ 'is-invalid': isInvalid(zipCode) }">
+        <div *ngIf="isInvalid(zipCode)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="zipCode?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="contact-name">
+          *Contact Name:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="contact-name"
+                type="text"
+                class="form-control"
+                formControlName="contactName"
+                [ngClass]="{ 'is-invalid': isInvalid(contactName) }">
+        <div *ngIf="isInvalid(contactName)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="contactName?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="contact-phone">
+          *Contact Phone:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="contact-phone"
+                type="text"
+                class="form-control"
+                formControlName="contactPhoneNumber"
+                placeholder="999-999-9999"
+                [ngClass]="{ 'is-invalid': isInvalid(contactPhoneNumber) }">
+        <div *ngIf="isInvalid(contactPhoneNumber)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="contactPhoneNumber?.hasError('required')">
+            Required field
+          </span>
+          <span *ngIf="contactPhoneNumber?.hasError('pattern')">
+            Invalid phone number format
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="contact-email">
+          *Contact Email:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-7">
+        <input id="contact-email"
+                type="text"
+                class="form-control"
+                formControlName="contactEmail"
+                [ngClass]="{ 'is-invalid': isInvalid(contactEmail) }">
+        <div *ngIf="isInvalid(contactEmail)"
+             class="small alert alert-danger my-1 p-2">
+          <span *ngIf="contactEmail?.hasError('required')">
+            Required field
+          </span>
+          <span *ngIf="contactEmail?.hasError('email')">
+            Invalid email format
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-3 text-md-right font-weight-bold">
+        <label for="active">
+          Active:
+        </label>
+      </div>
+      <div class="col-7">
+        <input id="active"
+               type="checkbox"
+               class="form-control form-checkbox"
+               formControlName="active">
+      </div>
+    </div>
+
+    <footer class="modal-footer">
+      <button type="submit"
+              class="btn"
+              [ngClass]="{'btn-outline-secondary': !form.valid,
+                          'btn-secondary': form.valid}"
+              [disabled]="!form.valid">
+        Create
+      </button>
+      <button type="button"
+              class="btn btn-secondary"
+              (click)="activeModal.close()">
+        Cancel
+      </button>
+    </footer>
+  </form>
+</main>

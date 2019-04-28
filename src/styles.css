@@ -27,3 +27,37 @@ main {
   background-color: rgba(0, 183, 18, 0.7); /* Provides contrast to indicate a link is active */
   color: #000000; /* Set text color to black */
 }
+
+.page-item.active .page-link {
+  background-color: rgba(0, 183, 18, 0.7); /* Set the pagination number blocks color */
+  border-color: rgba(0, 183, 18, 0.7); /* Set the pagination number blocks border color */
+}
+
+.icon { /* Style the CRUD screens Font Awesome icons */
+  border: 0;
+  margin: 0;
+  padding: .25rem .5rem;
+  background-color: transparent;
+  color: black;
+}
+
+.icon:hover { /* Set the CRUD screens Font Awesome icon hover color  */
+  background-color: rgba(0, 183, 18, 0.7);
+}
+
+.icon[disabled] { /* Set the CRUD screens Font Awesome icons disabled appearance*/
+  background-color: transparent;
+  color: black;
+}
+
+.viewLabel { /* Style the detail screen label fields */
+  background-color: lightgray;
+  text-align: right;
+  font-weight: bold;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
+button:disabled { /* Show the not-allowed cursor when buttons are disabled */
+  cursor: not-allowed;
+}

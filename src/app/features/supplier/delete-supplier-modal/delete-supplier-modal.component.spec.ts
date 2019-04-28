@@ -1,36 +1,33 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { SupplierComponent } from './supplier.component';
+import { DeleteSupplierModalComponent } from './delete-supplier-modal.component';
 
-describe('SupplierComponent', () => {
-  let component: SupplierComponent;
-  let fixture: ComponentFixture<SupplierComponent>;
+describe('DeleteSupplierModalComponent', () => {
+  let component: DeleteSupplierModalComponent;
+  let fixture: ComponentFixture<DeleteSupplierModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        SupplierComponent
+        DeleteSupplierModalComponent
       ],
       imports: [
         RouterTestingModule,
-        FontAwesomeModule,
-        NgbPaginationModule,
-        ReactiveFormsModule,
-        FormsModule,
         HttpClientModule
+      ],
+      providers: [
+        NgbActiveModal
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SupplierComponent);
+    fixture = TestBed.createComponent(DeleteSupplierModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
