@@ -1,0 +1,83 @@
+<section class="mx-3">
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">ID:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.id }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Product Number:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.code }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Name:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Description:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.description }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Price:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.price | currency }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Cost:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.cost | currency }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Supplier:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.supplierId }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Image URL:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.imageUrl }}</div>
+  </div>
+  <div *ngIf="product && product.imageUrl"
+       class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Rendered Image:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">
+      <img #image
+           class="mt-2 align-center"
+           [src]="product?.imageUrl"
+           width="200"
+           (error)="updateUrl()">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Package Dimensions (inches):</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.packageDimensions }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Package Weight (pounds):</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.packageWeight }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Rating:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">
+      <ngb-rating [rate]="product?.rating"
+                  [starTemplate]="t"
+                  [readonly]="true"
+                  max="5"></ngb-rating>
+      <ng-template #t let-fill="fill">
+        <span class="star" [class.full]="fill === 100">
+          <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+        </span>
+      </ng-template>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Category:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.category }}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 viewLabel">Active:</div>
+    <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">{{ product?.active }}</div>
+  </div>
+  <div class="row">
+    <button type="button"
+            class="btn btn-secondary mt-3"
+            [routerLink]="['/products']"
+            queryParamsHandling="preserve">
+      Back
+    </button>
+  </div>
+</section>

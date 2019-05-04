@@ -16,7 +16,6 @@
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div id="navbarContent"
          class="collapse navbar-collapse align-self-stretch"
          [ngbCollapse]="navbarCollapsed">
@@ -66,34 +65,40 @@
             </li>
           </ng-container>
         </ng-container>
-
         <ng-container *ngIf="isAuthenticated && hasAdminRole()">
-          <li *ngFor="let menu of adminMenus$ | async"
-              class="nav-item dropdown"
-              ngbDropdown>
-            <a class="nav-link dropdown-toggle"
-               id="menu.id"
-               tabindex="0"
-               ngbDropdownToggle>
-              <div>
-                {{ menu.title }}
-              </div>
-            </a>
-            <div class="dropdown-menu"
-                 aria-labelledby="menu.id"
-                 ngbDropdownMenu>
-              <a *ngFor="let link of menu.links"
-                 ngbDropdownItem
-                 class="dropdown-item"
-                 [routerLink]="link.path"
-                 [routerLinkActive]="['active']"
-                 (click)="navbarCollapsed=true"
-                 [disabled]="link.disabled">
-                {{ link.title }}
+          <ng-container *ngFor="let menu of adminMenus$ | async">
+            <li *ngIf="!menu.disabled"
+                class="nav-item dropdown"
+                ngbDropdown>
+              <a class="nav-link dropdown-toggle"
+                 id="menu.id"
+                 tabindex="0"
+                 ngbDropdownToggle>
+                <div>
+                  {{ menu.title }}
+                </div>
               </a>
-            </div>
-          </li>
+              <div class="dropdown-menu"
+                   aria-labelledby="menu.id"
+                   ngbDropdownMenu>
+                <ng-container *ngFor="let link of menu.links">
+                  <a *ngIf="!link.disabled"
+                     ngbDropdownItem
+                     class="dropdown-item"
+                     [routerLink]="link.path"
+                     [routerLinkActive]="['active']"
+                     (click)="navbarCollapsed=true">
+                    {{ link.title }}
+                  </a>
+                  <div *ngIf="link.disabled"
+                       class="dropdown-item disabledNavLink">
+                    {{ link.title }}
+                  </div>
+                </ng-container>
+              </div>
+            </li>
           </ng-container>
+        </ng-container>
       </ul>
       <ul class="navbar-nav">
         <li *ngIf="!isAuthenticated"

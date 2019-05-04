@@ -1,0 +1,21 @@
+div {
+  word-break: break-all; /* Force URLs to wrap */
+}
+
+.star { /* CSS for ngb-rating component */
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #d3d3d3;
+}
+
+.full { /* CSS for ngb-rating component */
+  color: #000000;
+}
+
+.half { /* CSS for ngb-rating component */
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #000000;
+}

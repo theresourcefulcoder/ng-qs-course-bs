@@ -52,10 +52,16 @@ main {
 
 .viewLabel { /* Style the detail screen label fields */
   background-color: lightgray;
-  text-align: right;
   font-weight: bold;
   padding-top: .25rem;
   padding-bottom: .25rem;
+  padding-left: .5rem;
+}
+
+@media (min-width: 576px) { /* Only apply above the extra small break point */
+  .viewLabel {
+    text-align: right; /* Right align the labels */
+  }
 }
 
 button:disabled { /* Show the not-allowed cursor when buttons are disabled */

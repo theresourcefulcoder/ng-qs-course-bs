@@ -1,0 +1,5 @@
+@media (max-width: 575.8px) { /* Only apply below the small break point */
+  #productTable {
+    font-size: 0.9rem; /* Reduce the font-size */
+  }
+}

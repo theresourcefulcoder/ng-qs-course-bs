@@ -78,10 +78,10 @@
                 class="form-control"
                 formControlName="country"
                 [ngClass]="{ 'is-invalid': isInvalid(country) }"
-                (change)="filterStates(country.value)">
+                (change)="filterStates(country.value);clearState();">
           <option value="">Select...</option>
           <option *ngFor="let country of countries"
-                  [value]="country?.id">
+                  [ngValue]="country?.id">
             {{ country?.name + ' (' + country?.abbreviation + ')' }}
           </option>
         </select>
@@ -106,7 +106,7 @@
                 [ngClass]="{ 'is-invalid': isInvalid(state) }">
           <option value="">Select...</option>
           <option *ngFor="let state of filteredStates"
-                  [value]="state?.id">
+                  [ngValue]="state?.id">
             {{ state?.name + ' (' + state?.abbreviation + ')' }}
           </option>
         </select>

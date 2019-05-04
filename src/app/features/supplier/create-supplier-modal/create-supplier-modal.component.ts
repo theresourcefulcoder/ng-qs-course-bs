@@ -66,18 +66,18 @@ export class CreateSupplierModalComponent implements OnInit, OnDestroy {
       );
 
     this.form = this.formBuilder.group({
-      id: [''],
-      name: ['', Validators.compose([Validators.required])],
-      address1: ['', Validators.compose([Validators.required])],
-      address2: [''],
-      city: ['', Validators.compose([Validators.required])],
-      state: ['', Validators.compose([Validators.required])],
-      zipCode: ['', Validators.compose([Validators.required])],
-      country: ['', Validators.compose([Validators.required])],
-      contactName: ['', Validators.compose([Validators.required])],
-      contactPhoneNumber: ['', Validators.compose([Validators.required,
+      id: [null],
+      name: [null, Validators.compose([Validators.required])],
+      address1: [null, Validators.compose([Validators.required])],
+      address2: [null],
+      city: [null, Validators.compose([Validators.required])],
+      state: [null, Validators.compose([Validators.required])],
+      zipCode: [null, Validators.compose([Validators.required])],
+      country: [null, Validators.compose([Validators.required])],
+      contactName: [null, Validators.compose([Validators.required])],
+      contactPhoneNumber: [null, Validators.compose([Validators.required,
                                                    Validators.pattern(/^\d{3}-\d{3}-\d{4}$/)])],
-      contactEmail: ['', Validators.compose([Validators.required, Validators.email])],
+      contactEmail: [null, Validators.compose([Validators.required, Validators.email])],
       active: [false],
     });
   }
@@ -86,12 +86,9 @@ export class CreateSupplierModalComponent implements OnInit, OnDestroy {
    * OnDestroy lifecycle hook
    */
   ngOnDestroy(): void {
-    if (this.httpSub) {
-      this.httpSub.unsubscribe();
-    }
-
-    this.countriesSub.unsubscribe();
-    this.statesSub.unsubscribe();
+    if (this.httpSub) { this.httpSub.unsubscribe(); }
+    if (this.countriesSub) { this.countriesSub.unsubscribe(); }
+    if (this.statesSub) { this.statesSub.unsubscribe(); }
   }
 
   // Convenience form getters
@@ -141,7 +138,6 @@ export class CreateSupplierModalComponent implements OnInit, OnDestroy {
    * @param field - field being checked
    */
   isInvalid(field: any): boolean {
-    console.log('isInvalid');
     return field.invalid && (field.dirty || field.touched);
   }
 
@@ -150,7 +146,16 @@ export class CreateSupplierModalComponent implements OnInit, OnDestroy {
    *
    * @param countryId - country to filter states by
    */
-  filterStates(countryId: string): void {
-    this.filteredStates = this.states.filter(state => state.countryId.toString() === countryId);
+  filterStates(countryId: number): void {
+    this.filteredStates = this.states.filter(state => state.countryId === countryId);
+  }
+
+  /**
+   * Function to clear the state selection value
+   */
+  clearState(): void {
+    if (this.form.controls.state.dirty) {
+      this.form.controls.state.setValue('');
+    }
   }
 }

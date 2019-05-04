@@ -6,7 +6,7 @@ import { AuthenticationGuard } from 'src/app/shared/guards/authentication.guard'
 import { AuthorizationGuard } from 'src/app/shared/guards/authorization.guard';
 
 /**
- * Defined routes for the root SupplierRoutingModule
+ * Defined routes for the feature SupplierRoutingModule
  */
 const routes: Routes = [
   { path: '',

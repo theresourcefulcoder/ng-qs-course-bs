@@ -1,0 +1,283 @@
+<section>
+  <form [formGroup]="form"
+        (ngSubmit)="submitForm(form.value)">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 col-xl-3 text-md-right text-danger mb-2">
+        * Required Field
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="product-code">
+          *Code:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="product-code"
+               type="text"
+               class="form-control"
+               formControlName="code"
+               [ngClass]="{ 'is-invalid': isInvalid(code) }">
+        <div *ngIf="isInvalid(code)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="code?.hasError('required')">
+            Required field
+          </span>
+          <span *ngIf="code?.hasError('duplicateCode')">
+            Duplicate code entered
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="product-name">
+          *Name:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="product-name"
+               type="text"
+               class="form-control"
+               formControlName="name"
+               [ngClass]="{ 'is-invalid': isInvalid(name) }">
+        <div *ngIf="isInvalid(name)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="name?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="description">
+          *Description:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <textarea id="description"
+                  rows="4"
+                  class="form-control"
+                  formControlName="description"
+                  [ngClass]="{ 'is-invalid': isInvalid(description) }"></textarea>
+        <div *ngIf="isInvalid(description)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="description?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="price">
+          *Price:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="price"
+               type="number"
+               class="form-control"
+               formControlName="price"
+               [ngClass]="{ 'is-invalid': isInvalid(price) || form.hasError('markupTooLow') }">
+        <div *ngIf="isInvalid(price) || form.hasError('markupTooLow')"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="price?.hasError('required')">
+            Required field
+          </span>
+          <span *ngIf="form.hasError('markupTooLow')">
+            The markup is too low. Minimum price needed: {{ form.errors['markupTooLow'] | currency }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="cost">
+          *Cost:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="cost"
+               type="number"
+               class="form-control"
+               formControlName="cost"
+               [ngClass]="{ 'is-invalid': isInvalid(cost) || form.hasError('markupTooLow')}">
+        <div *ngIf="isInvalid(cost) || form.hasError('markupTooLow')"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="cost?.hasError('required')">
+            Required field
+          </span>
+          <span *ngIf="form.hasError('markupTooLow')">
+            The markup is too low. Minimum price needed: {{ form.errors['markupTooLow'] | currency }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="supplier">
+          *Supplier:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <select id="supplier"
+                class="form-control"
+                formControlName="supplierId"
+                [ngClass]="{ 'is-invalid': isInvalid(supplierId) }">
+          <option value="">Select...</option>
+          <option *ngFor="let supplier of suppliers"
+                  [ngValue]="supplier?.id">
+            {{ supplier?.name }}
+          </option>
+        </select>
+        <div *ngIf="isInvalid(supplierId)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="supplierId?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="image-url">
+          *Image URL:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input #imageInput
+               id="image-url"
+               type="text"
+               class="form-control"
+               formControlName="imageUrl"
+               [ngClass]="{ 'is-invalid': isInvalid(imageUrl) }">
+        <div *ngIf="isInvalid(imageUrl)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="imageUrl?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-12 offset-md-5 offset-lg-5 offset-xl-3">
+        <img #image
+             class="mt-2 align-center"
+             [src]="imageInput.value"
+             width="200"
+             (error)="updateUrl()">
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="package-dimensions">
+          *Package Dimensions (inches):
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="package-dimensions"
+               type="text"
+               class="form-control"
+               formControlName="packageDimensions"
+               [ngClass]="{ 'is-invalid': isInvalid(packageDimensions) }">
+        <div *ngIf="isInvalid(packageDimensions)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="packageDimensions?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="package-weight">
+          *Package Weight (pounds):
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="package-weight"
+               type="number"
+               class="form-control"
+               formControlName="packageWeight"
+               [ngClass]="{ 'is-invalid': isInvalid(packageWeight) }">
+        <div *ngIf="isInvalid(packageWeight)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="packageWeight?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="rating">
+          *Rating:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="rating"
+               type="number"
+               class="form-control"
+               formControlName="rating"
+               [ngClass]="{ 'is-invalid': isInvalid(rating) }">
+        <div *ngIf="isInvalid(rating)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="rating?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="category">
+          *Category:
+        </label>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <input id="category"
+               type="text"
+               class="form-control"
+               formControlName="category"
+               [ngClass]="{ 'is-invalid': isInvalid(category) }">
+        <div *ngIf="isInvalid(category)"
+              class="small alert alert-danger my-1 p-2">
+          <span *ngIf="category?.hasError('required')">
+            Required field
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-form-label col-sm-12 col-md-5 col-xl-3 text-md-right font-weight-bold">
+        <label for="active">
+          Active:
+        </label>
+      </div>
+      <div class="col-4">
+        <input id="active"
+               type="checkbox"
+               class="form-control form-checkbox"
+               formControlName="active">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-11 col-lg-10 col-xl-8 text-right">
+        <button type="submit"
+                class="btn"
+                [ngClass]="{'btn-outline-secondary': !form.valid,
+                            'btn-secondary': form.valid}"
+                [disabled]="!form.valid || !form.dirty">
+          Submit
+        </button>
+        <button type="button"
+                class="btn btn-secondary ml-3"
+                [routerLink]="['/products']"
+                queryParamsHandling="preserve">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</section>

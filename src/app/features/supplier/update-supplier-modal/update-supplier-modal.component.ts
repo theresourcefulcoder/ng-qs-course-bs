@@ -62,7 +62,7 @@ export class UpdateSupplierModalComponent implements OnInit, OnDestroy {
       .subscribe(
         data => {
           this.states = data;
-          this.filterStates(this.supplier.country.toString());
+          this.filterStates(this.supplier.country);
         },
         error => {
           this.countries = [];
@@ -95,8 +95,13 @@ export class UpdateSupplierModalComponent implements OnInit, OnDestroy {
       this.httpSub.unsubscribe();
     }
 
-    this.countriesSub.unsubscribe();
-    this.statesSub.unsubscribe();
+    if (this.countriesSub) {
+      this.countriesSub.unsubscribe();
+    }
+
+    if (this.statesSub) {
+      this.statesSub.unsubscribe();
+    }
   }
 
   // Convenience form getters
@@ -154,7 +159,15 @@ export class UpdateSupplierModalComponent implements OnInit, OnDestroy {
    *
    * @param countryId - country to filter states by
    */
-  filterStates(countryId: string): void {
-    this.filteredStates = this.states.filter(state => state.countryId.toString() === countryId);
+  filterStates(countryId: number): void {
+    this.filteredStates = this.states.filter(state => state.countryId === countryId);
+  }
+
+  /**
+   * Function to clear the state selection value
+   */
+  clearState(): void {
+    this.form.controls.state.setValue('');
+    this.form.controls.state.markAsDirty();
   }
 }

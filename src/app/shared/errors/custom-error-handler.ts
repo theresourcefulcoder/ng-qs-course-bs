@@ -33,7 +33,7 @@ export class CustomErrorHandler extends ErrorHandler {
       errorMessage = new HttpError(error).toString();
     } else {
       // Could replace the console.log with a call to a logger service
-      console.log(errorMessage);
+      console.log(error);
       errorMessage = 'An error occurred processing the request.';
     }
 

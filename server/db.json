@@ -65,7 +65,7 @@
         {
           "title": "Link 3",
           "path": "/path",
-          "disabled": false
+          "disabled": true
         }
       ],
       "disabled": true
@@ -78,18 +78,18 @@
       "links": [
         {
           "title": "Manage Suppliers",
-          "path": "/supplier",
+          "path": "/suppliers",
           "disabled": false
         },
         {
-          "title": "Link 2",
-          "path": "/path",
+          "title": "Manage Products",
+          "path": "/products",
           "disabled": false
         },
         {
           "title": "Link 3",
           "path": "/path",
-          "disabled": false
+          "disabled": true
         }
       ],
       "disabled": false
@@ -638,6 +638,218 @@
       "contactName": "Martin Taylor",
       "contactPhoneNumber": "480-497-1683",
       "contactEmail": "martin@desertplainsproducts.com",
+      "active": true
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "code": "BOW-PROD-1",
+      "name": "Bowflex Xtreme 2 SE Home Gym",
+      "description": "The Bowflex Xtreme® 2 SE lets you change exercises more quickly and easily with no cable changes needed between exercises. Now includes ergonomically designed adjustable seat and Ab Crunch Shoulder Harness.",
+      "price": 1599,
+      "cost": 1199.25,
+      "supplierId": 1,
+      "imageUrl": "./assets/images/products/bowflex_xtreme2_se_home_gym.webp",
+      "packageDimensions": "53x49x83.25",
+      "packageWeight": 185,
+      "rating": "4.75",
+      "category": "Home Gyms",
+      "active": true
+    },
+    {
+      "id": 2,
+      "code": "BOW-PROD-2",
+      "name": "Bowflex Revolution Home Gym",
+      "description": "Over 100 exercises with up to 400 variations. Designed to work every major body zone, and support every workout routine, strength level and fitness goal.",
+      "price": 2999,
+      "cost": 2245.25,
+      "supplierId": 2,
+      "imageUrl": "./assets/images/products/bowflex_revolution_home_gym.webp",
+      "packageDimensions": "112x38x73",
+      "packageWeight": 336,
+      "rating": 4.5,
+      "category": "Home Gyms",
+      "active": true
+    },
+    {
+      "id": 3,
+      "code": "FK-PROD-1",
+      "name": "FitKing Multi-Function Smith Machine",
+      "description": "Fitking Smith Machine - the most advanced Smith Machine in the industry. Commercial grade construction combined with state-of-the-art bio-mechanical design",
+      "price": 2995,
+      "cost": 2245.25,
+      "supplierId": 1,
+      "imageUrl": "./assets/images/products/fitking_smith_machine.jpg",
+      "packageDimensions": "86x61x86",
+      "packageWeight": 407,
+      "rating": 4.25,
+      "category": "Strength Training",
+      "active": true
+    },
+    {
+      "id": 4,
+      "code": "FK-PROD-2",
+      "name": "FitKing Home Gym + Leg Press",
+      "description": "Fitking Strength Training System!",
+      "price": 2895,
+      "cost": 2170.25,
+      "supplierId": 7,
+      "imageUrl": "./assets/images/products/fitking_home_gym.jpg",
+      "packageDimensions": "95x89x84",
+      "packageWeight": 693,
+      "rating": 4,
+      "category": "Cross Trainers",
+      "active": true
+    },
+    {
+      "id": 5,
+      "code": "NAUT-PROD-1",
+      "name": "Nautilus EVO Pullover Machine",
+      "description": "Superior Nautilus biomechanics - smooth resistance and proper muscle loading through complete range of motion",
+      "price": 5495,
+      "cost": 4120.25,
+      "supplierId": 5,
+      "imageUrl": "./assets/images/products/nautilus_pullover.jpg",
+      "packageDimensions": "57x49x67",
+      "packageWeight": 631,
+      "rating": 3.75,
+      "category": "Strength Trainers",
+      "active": true
+    },
+    {
+      "id": 6,
+      "code": "NAUT-PROD-2",
+      "name": "Nautilus EVO Leg Press Machine",
+      "description": "Superior Nautilus biomechanics - smooth resistance and proper muscle loading through complete range of motion",
+      "price": 7075,
+      "cost": 5305.25,
+      "supplierId": 1,
+      "imageUrl": "./assets/images/products/nautilus_leg_press.jpg",
+      "packageDimensions": "92x40x64",
+      "packageWeight": 981,
+      "rating": 3.5,
+      "category": "Cross Trainers",
+      "active": true
+    },
+    {
+      "id": 7,
+      "code": "NU-PROD-1",
+      "name": "NuStep T4r Recumbent Cross Trainer",
+      "description": "NuStep Simulates a natural walking motion while eliminating undesirable joint stress therefore promoting functional fitness. This machine builds strength and is great for users with disabilities, in rehab or seeking health and wellness. The T4r is self-powered, starts easily, operates quietly and can be used in most locations. The seat is ergonomically designed to be comfortable, features a 360o swivel (with 45o locking intervals) allowing easy on and off access. The arms adjust up to 15\" to fit any body size and preferred range of motion. Meanwhile, the foot pedals accommodate different sized feet and keep them securely in position. Finally, the console is easy to read and includes a one-button quick start and reset. Choose from 10 levels of resistance along with Quick Start, Pace Partner, and track programs.",
+      "price": 3945,
+      "cost": 2955.75,
+      "supplierId": 3,
+      "imageUrl": "./assets/images/products/nustep_t4r_trainer.jpg",
+      "packageDimensions": "60x27x45",
+      "packageWeight": 210,
+      "rating": 3.25,
+      "category": "Cross Trainers",
+      "active": true
+    },
+    {
+      "id": 8,
+      "code": "NU-PROD-2",
+      "name": "NuStep T5XRW Recumbent Cross Trainer",
+      "description": "NuStep The T5 design is the result of collaboration with exercise physiologists, ergonomic specialists, and our customers. It offers the benefits of life transforming exercise to patients, clients, and home users alike. Virtually anyone can exercise on the T5, from deconditioned or disabled users to workout warriors and elite athletes. The T5 offers safe, effective, and adaptive exercise with a mid-level feature set and price.",
+      "price": 5845,
+      "cost": 4380.75,
+      "supplierId": 7,
+      "imageUrl": "./assets/images/products/nustep_t5xrw_trainer.jpg",
+      "packageDimensions": "73x29x46",
+      "packageWeight": 295,
+      "rating": 5,
+      "category": "Cross Trainers",
+      "active": true
+    },
+    {
+      "id": 9,
+      "code": "PRO-PROD-1",
+      "name": "Pro-Form 440 ES Exercise Bike",
+      "description": "Engage in a whole new fitness experience as certified personal trainers take your exercise all around the world. With iFit® Coach, you’ll be led through an expansive collection of GlobeTrek™ workouts and an ever-growing library of limit-pushing LiveCast™ workout classes, getting you moving and sweating on and off your machine. Connect your tablet to this iFit® Coach Ready™ exercise bike via Bluetooth and start working out with your own personal trainer. Subscription required.",
+      "price": 599,
+      "cost": 445.25,
+      "supplierId": 3,
+      "imageUrl": "./assets/images/products/proform_440es.webp",
+      "packageDimensions": "22.5x59x52",
+      "packageWeight": 142,
+      "rating": 4.5,
+      "category": "Exercise Bikes",
+      "active": true
+    },
+    {
+      "id": 10,
+      "code": "PRO-PROD-2",
+      "name": "Pro-Form SMART HIIT Trainer Pro",
+      "description": "Step up to new heights on the SMART HIIT Trainer Pro. Combining the movement of climbing stairs with the intensity of boxing, each workout helps you activate more muscles throughout your whole body while burning more calories.",
+      "price": 1399,
+      "cost": 1045.25,
+      "supplierId": 4,
+      "imageUrl": "./assets/images/products/proform_smart_hiit_trainer_pro.webp",
+      "packageDimensions": "66.7x29.25x52",
+      "packageWeight": 225,
+      "rating": 4.25,
+      "category": "Trainers",
+      "active": true
+    },
+    {
+      "id": 11,
+      "code": "PRO-PROD-3",
+      "name": "Pro-Form Pro 9.9 Elliptical",
+      "description": "Engage in a whole new fitness experience as certified personal trainers take your exercise all around the world. With iFit® Coach, you’ll be led through an expansive collection of GlobeTrek™ workouts, getting you moving and sweating on and off your machine. Connect your tablet to this iFit® Coach Ready™ elliptical via Bluetooth and start working out with your own personal trainer. Subscription required.",
+      "price": 999,
+      "cost": 745.99,
+      "supplierId": 5,
+      "imageUrl": "./assets/images/products/proform_pro_9.9.webp",
+      "packageDimensions": "79.75x25.75x66.25",
+      "packageWeight": 310,
+      "rating": 4,
+      "category": "Ellipticals",
+      "active": true
+    },
+    {
+      "id": 12,
+      "code": "SOLE-PROD-1",
+      "name": "Sole F85 Treadmill",
+      "description": "SOLE’s F85 is designed to handle the hardest workouts. Sole's highest rated foldable machine with unmatched durability combined with some of the most innovative high tech features.",
+      "price": 1999.99,
+      "cost": 1495.99,
+      "supplierId": 6,
+      "imageUrl": "./assets/images/products/sole_f85_treadmill.png",
+      "packageDimensions": "57x83x37",
+      "packageWeight": 301,
+      "rating": 4.75,
+      "category": "Treadmills",
+      "active": true
+    },
+    {
+      "id": 13,
+      "code": "SOLE-PROD-2",
+      "name": "Sole SB700 Bike",
+      "description": "SOLE has paired affordability with quality – you can’t get a bike this comfortable, durable, and responsive for double the price! With integrated wireless technology and the quietest, smoothest ride in its class, the SB700 is the perfect intersection of value and performance.",
+      "price": 799.99,
+      "cost": 595.99,
+      "supplierId": 2,
+      "imageUrl": "./assets/images/products/sole_sb700_bike.jpg",
+      "packageDimensions": "42x40x21",
+      "packageWeight": 141,
+      "rating": 4.5,
+      "category": "Exercise Bikes",
+      "active": true
+    },
+    {
+      "id": 14,
+      "code": "SOLE-PROD-3",
+      "name": "Sole SR500 Rower",
+      "description": "High intensity style workout in the comfort of your own home. The Sole SR500 Rower also features our exclusive resistance adjustment on the handle bar.",
+      "price": 999.99,
+      "cost": 745.99,
+      "supplierId": 1,
+      "imageUrl": "./assets/images/products/sole_sr500_rower.png",
+      "packageDimensions": "97x18x38",
+      "packageWeight": 115,
+      "rating": 4.5,
+      "category": "Rowers",
       "active": true
     }
   ]

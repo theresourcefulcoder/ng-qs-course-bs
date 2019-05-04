@@ -179,8 +179,12 @@ export class SupplierComponent implements OnInit, OnDestroy {
    * @param id - ID of the state
    */
   getStateAbbreviation(id: number): string {
+    let tempState: State;
+
     if (this.states.length > 0) {
-      return this.states.find(state => state.id === id).abbreviation;
+      tempState = this.states.find(state => state.id === id);
     }
+
+    return tempState ? tempState.abbreviation : '';
   }
 }
