@@ -1,0 +1,11 @@
+<section class="row">
+  <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let product of products">
+        <app-product-card [product]="product"
+                          [suppliers]="suppliers">
+        </app-product-card>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</section>

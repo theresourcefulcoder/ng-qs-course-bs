@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "mock-server": "json-server --watch server/db.json",
-    "auth-server": "node server/server.js"
+    "auth-server": "node server/server.ts"
   },
   "private": true,
   "dependencies": {

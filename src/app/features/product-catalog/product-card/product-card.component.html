@@ -1,0 +1,19 @@
+<section class="card">
+  <img class="card-img-top"
+       [src]="product.imageUrl"
+       alt="{{ product.name + ' image'}}">
+  <div class="card-body">
+    <div class="d-flex flex-nowrap">
+      <div class="col-8">
+        <h5 class="card-title">{{ product.name }}</h5>
+      </div>
+      <div class="col-4">
+        <h5 class="card-title text-right">{{ product.price | currency }}</h5>
+      </div>
+    </div>
+    <div class="col-12">
+      <p class="card-text text-justify">{{ product.description }}</p>
+    </div>
+    <br>
+  </div>
+</section>

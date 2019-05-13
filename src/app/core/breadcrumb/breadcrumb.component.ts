@@ -49,7 +49,6 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
     this.routerSub.unsubscribe();
   }
 
-
   /**
    * Function to build out the breadcrumbs array
    *
@@ -58,41 +57,38 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
    * @param breadcrumbs - the breadcrumbs array to add to
    */
   private buildBreadcrumbs(activatedRoute: ActivatedRoute, route: string = '', breadcrumbs: Breadcrumb[] = []): Breadcrumb[] {
-    // get any child routes
+    // Get any child routes
     const childRoutes: ActivatedRoute[] = activatedRoute.children;
 
-    // return if there are no more child routes
+    // Return if there are no more child routes
     if (childRoutes.length === 0) {
       return breadcrumbs;
     }
 
-    // iterate over each child route
+    // Iterate over each child route
     for (const child of childRoutes) {
-      // verify this is the primary route
+      // Verify this is the primary route
       if (child.outlet !== PRIMARY_OUTLET) {
         continue;
       }
 
-      // ensure the data property "breadcrumb" is defined on the route
-      if (!child.snapshot.data.hasOwnProperty('breadcrumb')) {
-        return this.buildBreadcrumbs(child, route, breadcrumbs);
-      }
-
-      // get the route's URL segment
+      // Get the route's URL segment
       const routeURL: string = child.snapshot.url.map(segment => segment.path).join('/');
 
       // append route URL to URL
       route += `/${routeURL}`;
 
-      // add breadcrumb
+      // create breadcrumb
       const breadcrumb: Breadcrumb = {
         title: child.snapshot.data.breadcrumb,
-        queryParams: child.snapshot.params,
+        queryParams: child.snapshot.queryParams,
         routerLink: route
       };
 
-      // Add the new breadcrumb to the array
-      breadcrumbs = [...breadcrumbs, breadcrumb];
+      // Add the new breadcrumb to the array only if it has a title
+      if (breadcrumb.title) {
+        breadcrumbs = [...breadcrumbs, breadcrumb];
+      }
 
       // recursively call self until all child routes are iterated
       return this.buildBreadcrumbs(child, route, breadcrumbs);
